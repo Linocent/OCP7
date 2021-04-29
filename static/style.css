@@ -1,0 +1,40 @@
+
+body
+{
+    background-color: #FBDA9C;
+}
+
+#footer
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#logo
+{
+    max-width:25%;
+    height: auto;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+#top
+{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 50px;
+    border: 4px outset;
+}
+
+#top h1 p
+{
+    max-font-size: 100%;
+    position: center;
+}
+
+.name
+{
+    font-size: 20px;
+}
