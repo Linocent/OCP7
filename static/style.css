@@ -1,40 +1,70 @@
-
+@font-face {
+    font-family: "1942 report";
+    src:url("font_family/1942-webfont.eot")format('eot'),
+        url("font_family/1942-webfont.svg")format('svg'),
+        url("font_family/1942-webfont.ttf")format('ttf'),
+        url("font_family/1942-webfont.woff")format('woff');
+}
 body
 {
     background-color: #FBDA9C;
 }
 
-#footer
+#bloc_page
 {
+}
+
+#title /* gère le titre et le logo*/
+{
+    max-width: 100%;
+    max-height: 10%;
+    border: 4px outset;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
 }
 
-#logo
+.Name /* gère le titre de l'en-tête*/
 {
-    max-width:25%;
-    height: auto;
-    position: relative;
-    left: 0;
-    top: 0;
+    font-size: 40px;
+    font-family: "1942 report";
+    /*align-items: center;*/
 }
 
-#top
+.logo /*gère le logo*/
+{}
+
+section
+{
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+#corpse
 {
     display: flex;
-    justify-content: flex-start;
-    font-size: 50px;
-    border: 4px outset;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    max-width: 500px;
+    max-height: 100px;
+    border: 4px black;
+}
+.textarea
+{
+    max-height: 10%;
+    align-items: flex-end;
 }
 
-#top h1 p
+footer
 {
-    max-font-size: 100%;
-    position: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.name
+.element:nth-child(3)
 {
-    font-size: 20px;
+    align-self: flex-end;
 }

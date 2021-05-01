@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
-from views import index
+from views import app
 
 if __name__ == "__main__":
-    index.run(debug=True)
+    app.run(debug=True)
 
