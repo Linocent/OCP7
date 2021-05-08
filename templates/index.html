@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="../static/style.css"/>
     <title>GrandPy Bot</title>
     <link rel="icon" type="image/png" href="../static/image/grandpiCarre.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E"></script>
+    <script src="../static/main.js"></script>
 </head>
     <body>
         <div id="bloc_page">
@@ -22,37 +24,35 @@
                 </div>
             </header>
 
-            <section>
-                <div id="corpse">
-
-                    <div class="chat_box">
-                        <p>This is chat</p>
-                    </div>
+            <section id="corpse">
+                <div class="chat_box">
+                    <p>This is chat</p>
+                </div>
+                <form class="form">
                     <div class="textarea">
                         <textarea name="question" id="question" rows="10" cols="50"> Ask a question about a place.</textarea>
                     </div>
-                    <input type="submit" value="Submit"/>
-                    <!--<input type="buton" value="Submit"/> Qu'est-ce qu'y est le mieux? -->
-                </div>
+                    <input type="submit" value="Submit" id="click"/>
+                </form>
             </section>
 
-            <footer>
-                <div id="footer">
-                    <div class="repo git">
+            <footer id="footer">
+                <div class="f_logo">
+                    <div class="repo_git">
                         <a href="https://github.com/Linocent/P7">
-                          <img src="../static/image/git.png" alt="Git's logo"/>
+                          <img src="../static/image/github.png" alt="Git's logo" width="20"/>
                         </a>
                     </div>
                     <div class="linkedIn">
                         <a href="https://www.linkedin.com/in/timoth%C3%A9e-linocent-ab01051a7/">
-                            <img src="../static/image/lnkn.png" alt="LinkedIn's logo"/>
+                            <img src="../static/image/lin.png" alt="LinkedIn's logo" width="20"/>
                         </a>
                     </div>
-                    <div class="name">
-                        <p>
-                            Bot created by Linocent Timothée
-                        </p>
-                    </div>
+                </div>
+                <div class="name">
+                    <p>
+                        Bot created by Linocent Timothée
+                    </p>
                 </div>
             </footer>
 

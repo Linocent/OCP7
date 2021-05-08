@@ -12,16 +12,19 @@ body
 
 #bloc_page
 {
+    min-height: 100vh;
+    position: relative;
 }
 
 #title /* gère le titre et le logo*/
 {
     max-width: 100%;
-    max-height: 10%;
+    max-height: 20vh;
     border: 4px outset;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: auto;
 }
 
 .Name /* gère le titre de l'en-tête*/
@@ -34,37 +37,53 @@ body
 .logo /*gère le logo*/
 {}
 
-section
-{
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-}
 #corpse
 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    margin: auto;
     background-color: white;
-    max-width: 500px;
-    max-height: 100px;
+    max-width: 100px;
+    max-height: 100vh;
     border: 4px black;
 }
-.textarea
-{
-    max-height: 10%;
-    align-items: flex-end;
-}
 
-footer
+.form
 {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: flex-end;
+    bottom: 0;
 }
 
-.element:nth-child(3)
+#question
 {
-    align-self: flex-end;
+    max-height: 5%;
+}
+#click
+{
+    max-height: 5%;
+}
+#footer
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.f_logo
+{
+    display: flex;
+    justify-content: center;
+    max-height: 10%;
+}
+
+.name
+{
+    align-self: center;
 }
