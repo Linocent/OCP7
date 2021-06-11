@@ -1,5 +1,5 @@
 import pytest
-from . import parse
+import my_parser as script
 
 
 def test_parser():
@@ -11,6 +11,9 @@ def test_parser():
     expected_a = "musée art histoire fridbourg"
     expected_b = "tour eiffel"
 
-    assert parse(a) == expected_a
-    assert parse(b) == expected_b
+    assert script.MyParser.my_parse(a) == expected_a
+    assert script.MyParser.my_parse(b) == expected_b
+
+
+test_parser()
 
