@@ -27,7 +27,7 @@ class GoogleApi:
         print(f"This is url: {request.url}")
         if request.status_code == rq.codes.ok:
             response = request.json()
-            print(f"THis is response.json: {response}")
+            print(f"This is response.json: {response}")
             result = response['candidates'][0]
             information['address'] = result['formatted_address']
             information['name'] = result['name']
@@ -65,6 +65,7 @@ class WikiApi:
         request = rq.get(self.URL, params=params)
         print(f"This is url: {request.url}")
         response = request.json()
+        print(f"wiki_response: {response}")
         result = response['query']['geosearch']
         for place in result:
             page_title['title'] = place['title']
@@ -81,7 +82,6 @@ class WikiApi:
         print(info)
         return WikiApi.message(info['summary'], info['url'])
 
-
     def message(self, summary, url):
         """This function take every element we need for the answer."""
 
@@ -90,8 +90,7 @@ class WikiApi:
         grandpy_answer.append(random_intro)
         grandpy_answer.append(summary)
         grandpy_answer.append(url)
-        # grandpy_answer = f"{random_intro}\n {summary} {url}"
-        print(grandpy_answer)
+        print(f"gp answer: {grandpy_answer}")
         return grandpy_answer
 
 
