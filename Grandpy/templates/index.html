@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../static/style.css"/>
+    <title>GrandPy Bot</title>
+    <link rel="icon" type="image/png" href="../static/image/grandpiCarre.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Padauk&display=swap" rel="stylesheet">
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCBGitJm3ohngupPAnm-m0kFowgqxzT0eU&libraries=&v=weekly"
+      async
+    ></script>
+</head>
+    <body>
+        <div id="bloc_page">
+            <header>
+                <div id="banniere">
+                        <img id="logo" src="../static/image/grandpiCarre.png" alt="Grandpi's logo"><!--width="150"--> <!--id="logo"-->
+                        <h1>GrandPy</h1>
+                    <!--<div class="slogan">
+                        <p>The grandpa bot</p>
+                    </div>-->
+                </div>
+            </header>
+
+            <section id="corpse">
+                <div id="chat_box">
+                </div>
+                <form class="form">
+                    <div class="textarea">
+                        <textarea name="question" id="question" rows="10" cols="50"> Ask a question about a place.</textarea>
+                    </div>
+                    <div class="button">
+                        <button id="click">submit</button>
+                    </div>
+                </form>
+            </section>
+
+            <footer id="footer">
+                <div class="f_logo">
+                    <div class="repo_git">
+                        <a href="https://github.com/Linocent/P7">
+                          <img src="../static/image/github.png" alt="Git's logo" width="20"/>
+                        </a>
+                    </div>
+                    <div class="linkedIn">
+                        <a href="https://www.linkedin.com/in/timoth%C3%A9e-linocent-ab01051a7/">
+                            <img src="../static/image/lin.png" alt="LinkedIn's logo" width="20"/>
+                        </a>
+                    </div>
+                </div>
+                <div class="name">
+                    <p>
+                        Bot created by Linocent Timothée
+                    </p>
+                </div>
+            </footer>
+
+        </div>
+    <script src="{{url_for('static', filename='main.js')}}"></script>
+    </body>
+</html>
