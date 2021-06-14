@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-from views import app
+from Grandpy.views import app
 
 if __name__ == "__main__":
     app.run(debug=True)

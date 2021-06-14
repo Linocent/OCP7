@@ -1,6 +1,6 @@
 import pytest
-from my_parser import MyParser
-from api_request import WikiApi, GoogleApi
+from Grandpy.my_parser import MyParser
+from Grandpy.api_request import WikiApi, GoogleApi
 
 
 def test_parser():
@@ -109,6 +109,7 @@ class GoogleAPI:
                                                      'southwest': {'lat': 48.89616737010729, 'lng': 2.382056720107278}}},
                            'name': 'OpenClassrooms'}],
                      'status': 'OK'}
+
         def mock_get(self, *args, **kwargs):
             return MockResponse()
 
@@ -118,8 +119,7 @@ class GoogleAPI:
                                'lati': 48.8975156, 'lngi': 2.3833993}
 
 
-test_parser()
-WikiApiTest()
+
 
 """
 Google_API_Result = {'candidates':
