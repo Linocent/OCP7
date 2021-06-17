@@ -1,8 +1,8 @@
 # Créez GrandPy Bot, le papy-robot
 ***
-##Cahier des charges
+## Cahier des charges
 ***
-###Fonctionnalités:
+### Fonctionnalités:
 
 * Interactions en AJAX : question envoyée en appuyant sur entrée : la réponse s'affiche sans recharger la page.
 * Vous utiliserez l'API de Google Maps et celle de Media Wiki
@@ -10,7 +10,7 @@
 * [option] Plusieurs réponses différentes peuvent être faites
 
 ***
-###Livrables
+### Livrables
 * Document texte expliquant la démarche
     * difficultés rencontrées / solutions trouvées
     * lien Github
@@ -20,7 +20,7 @@
 * Code source dépôt sur Github
 * Tableau agile Project table sur <a href="https://trello.com/b/86zXsGf0/grandpy-bot">Trello</a>
 ***
-#Contraintes
+### Contraintes
 * Interface responsive et consultable sur mobile
 * Test Driven Development
 * Code intégralement écrit en anglais : fonctions, variables et commentaires
