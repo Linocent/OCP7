@@ -13,7 +13,7 @@ class MyParser:
         """This function take the question and delete all words which are contain in ban_words.json
         in order to have keywords."""
 
-        with open('ban_words.json') as ban_word:
+        with open('grandpy/ban_words.json') as ban_word:
             data_dict = json.load(ban_word)
         sentence = unidecode.unidecode(sentence)
         lowered = sentence.lower()
@@ -26,4 +26,3 @@ class MyParser:
                 filtered.append(word)
         print(f"this is filtered: {filtered}")
         return filtered
-

@@ -28,6 +28,7 @@ function publish(data) {
     answer.innerHTML = elt_to_publish;
     chat_elt.appendChild(answer);
     initMap(data)
+    window.scrollBy(0, window.innerHeight);
     return data;
 }
 let map;

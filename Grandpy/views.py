@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, jsonify
-from Grandpy.my_parser import MyParser
-from Grandpy.api_request import GoogleApi, WikiApi
+from grandpy.my_parser import MyParser
+from grandpy.api_request import GoogleApi, WikiApi
 
 
 app = Flask(__name__)
@@ -17,11 +17,13 @@ def analyse():
     user_input = request.args["question"]
     #keyword = MyParser.my_parse(user_input)
     #information = GoogleApi.google_request(keyword)
-    #message = WikiApi.wiki_request_title(information['lati'], information['lngi'])
+    #title = WikiApi.wiki_request_title(information['lati'], information['lngi'])
+    #texte = WikiApi.extract_text(title['title'])
+    #gp_history = WikiApi.message(texte['summary'], texte['url'])
     #print(f"message: {message}")
     return jsonify(
         user_input=user_input,
-        #gp_history=message,
+        #gp_history=gp_history,
         #information=information,
         information="10 Quai de la Charente, 75019 Paris, France",
         gp_history=["J'ai grandis juste à côté, laisse moi te parler de cet endroit.",

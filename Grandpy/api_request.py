@@ -24,7 +24,7 @@ class GoogleApi:
                   "language": "fr",
                   "key": KEY}
         request = rq.get(URL, params=params)
-        print(f"This is url: {request.url}")
+        #print(f"This is url: {request.url}")
         if request.status_code == rq.codes.ok:
             response = request.json()
             print(f"This is response.json: {response}")
@@ -35,8 +35,8 @@ class GoogleApi:
             information['lngi'] = result['geometry']['location']['lng']
             print(f"This is information: {information}")
             return information
-        else:
-            print(f"Error, code: {request.status_code}")
+        # else:
+            # print(f"Error, code: {request.status_code}")
 
 
 class WikiApi:
@@ -63,13 +63,14 @@ class WikiApi:
             "gradius": '1000'
         }
         request = rq.get(self.URL, params=params)
-        print(f"This is url: {request.url}")
+        #print(f"This is url: {request.url}")
         response = request.json()
         print(f"wiki_response: {response}")
         result = response['query']['geosearch']
         for place in result:
             page_title['title'] = place['title']
-        return WikiApi.extract_text(page_title['title'])
+        print(f"page_title: {page_title}")
+        return page_title
 
     def extract_text(self, title: str):
         """This function find description of the random place found."""
@@ -79,8 +80,7 @@ class WikiApi:
         page_title = wp.page(title)
         info['summary'] = page_title.summary
         info['url'] = page_title.url
-        print(info)
-        return WikiApi.message(info['summary'], info['url'])
+        return info
 
     def message(self, summary, url):
         """This function take every element we need for the answer."""
@@ -96,13 +96,6 @@ class WikiApi:
 
 GoogleApi = GoogleApi()  # J'instancie ma classe
 WikiApi = WikiApi()
-# WikiApi.wiki_request_title(48.856614, 2.3522219)
-# WikiApi.extract_text('New York')
+# WikiApi.wiki_request_title(48.8975156, 2.3833993)
+WikiApi.extract_text("École nationale supérieure d'architecture de Paris-La Villette")
 # GoogleApi.google_request("OpenClassroom")
-
-# This is information: {'address': 'Paris, France', 'name': 'Paris', 'lat': 48.856614, 'lng': 2.3522219}
-# This is information: {'address': '10 Quai de la Charente, 75019 Paris, France', 'name': 'OpenClassrooms',\
-    # 'lat': 48.8975156, 'lng': 2.3833993}
-
-# ["J'ai grandis juste à côté, laisse moi te parler de cet endroit.", "L'École nationale supérieure d'architecture de Paris-La Villette (ENSAPLV) est un établissement public d'enseignement supérieur à caractère administratif situé à Paris en France. Elle est placée sous la tutelle du ministère de la Culture et de la Communication (direction de l'Architecture et du Patrimoine). C'est l'une des vingt écoles publiques — les écoles nationales supérieures d'architecture — qui dispensent un enseignement supérieur de l'architecture en France.\nL'école de Paris-La Villette est, par le nombre de ses étudiants, la plus importante des 22 écoles d'architecture habilitées en France. Elle est membre de la Communauté d’universités et établissements (COMUE) HESAM.- HeSam Université (hautes études Sorbonne arts et métiers) est une ComUE (Communauté d'Universités et d'Établissements) qui fédère 12 établissements français d’enseignement supérieur, de formation et de recherche.\nEx-UP6 (unité pédagogique no 6), l'école est principalement située au 144 avenue de Flandre / 9 rue Barbanègre (avec également des locaux 11 rue de Cambrai pour le libre service informatique, et 118-130 avenue Jean-Jaurès pour les laboratoires de recherche), dans le 19e arrondissement de Paris.", 'https://fr.wikipedia.org/wiki/%C3%89cole_nationale_sup%C3%A9rieure_d%27architecture_de_Paris-La_Villette']
-
