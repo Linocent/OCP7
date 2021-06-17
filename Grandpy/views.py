@@ -5,8 +5,8 @@ Author: Timothée 2021-06-17
 This file is part of project [OCP7](https://github.com/Linocent/OCP7).
 """
 from flask import Flask, render_template, request, jsonify
-from grandpy.my_parser import MyParser
-from grandpy.api_request import GoogleApi, WikiApi
+from Grandpy.my_parser import MyParser
+from Grandpy.api_request import GoogleApi, WikiApi
 
 
 app = Flask(__name__)
