@@ -1,7 +1,7 @@
 # Créez GrandPy Bot, le papy-robot
-
+***
 ##Cahier des charges
-
+***
 ###Fonctionnalités:
 
 * Interactions en AJAX : question envoyée en appuyant sur entrée : la réponse s'affiche sans recharger la page.
@@ -9,7 +9,7 @@
 * Rien n'est sauvegardé (page rechargée == historique perdu)
 * [option] Plusieurs réponses différentes peuvent être faites
 
-
+***
 ###Livrables
 * Document texte expliquant la démarche
     * difficultés rencontrées / solutions trouvées
@@ -19,7 +19,7 @@
     * rédigé en anglais ou français
 * Code source dépôt sur Github
 * Tableau agile Project table sur <a href="https://trello.com/b/86zXsGf0/grandpy-bot">Trello</a>
-
+***
 #Contraintes
 * Interface responsive et consultable sur mobile
 * Test Driven Development
