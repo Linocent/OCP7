@@ -26,4 +26,4 @@
 * Code intégralement écrit en anglais : fonctions, variables et commentaires
 * Utilisation d'AJAX pour l'envoi des questions et l'affichage des réponses
 * Tests utilisant des mocks pour les API
-* Déploiement sur Heroku
+* Déploiement sur <a href="https://grandpybotpython.herokuapp.com/">Heroku</a>
