@@ -1,1 +1,1 @@
-web: gunicorn Grandpy:app.servers
+web: gunicorn grandpy:app.servers
