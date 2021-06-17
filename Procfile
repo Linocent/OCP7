@@ -1,1 +1,1 @@
-web: gunicorn flasklocal:app
+web: gunicorn grandpy:app
