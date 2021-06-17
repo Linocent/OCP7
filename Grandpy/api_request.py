@@ -1,7 +1,13 @@
-from config import GOOGLE_API_KEY
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Author: Timothée 2021-06-17
+This file is part of project [OCP7](https://github.com/Linocent/OCP7).
+"""
+import random as rd
 import requests as rq
 import wikipedia as wp
-import random as rd
+from config import GOOGLE_API_KEY
 
 
 class GoogleApi:
@@ -13,18 +19,19 @@ class GoogleApi:
         self.key = GOOGLE_API_KEY
 
     def google_request(self, user_input: str):
-        """ This fonction search information about the place, like adresse, name and coordonates."""
+        """ This fonction search information about the place,
+        like adresse, name and coordonates."""
 
         information = dict()
-        URL = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?'
-        KEY = self.key
+        url = 'https://maps.googleapis.com/maps/api/place/findplacefromtext/json?'
+        key = self.key
         params = {"input": user_input,
                   "inputtype": "textquery",
                   "fields": "formatted_address,name,geometry",
                   "language": "fr",
-                  "key": KEY}
-        request = rq.get(URL, params=params)
-        #print(f"This is url: {request.url}")
+                  "key": key}
+        request = rq.get(url, params=params)
+        print(f"This is url: {request.url}")
         if request.status_code == rq.codes.ok:
             response = request.json()
             print(f"This is response.json: {response}")
@@ -35,20 +42,21 @@ class GoogleApi:
             information['lngi'] = result['geometry']['location']['lng']
             print(f"This is information: {information}")
             return information
-        # else:
-            # print(f"Error, code: {request.status_code}")
 
 
 class WikiApi:
-    """This class use mediawiki API in order to find information about place find. Documentation of API:
+    """This class use mediawiki API in order to find information
+    about place find. Documentation of API:
     https://www.mediawiki.org/wiki/MediaWiki"""
 
     def __init__(self):
 
-        self.INTRO = ["Tiens, ce que tu me demande me rappel une histoire. Assieds-toi et écoute:",
+        self.intro = ["Tiens, ce que tu me demande me rappel une histoire. "
+                      "Assieds-toi et écoute:",
                       "Mais bien sûr, je me souviens.",
-                      "J'ai grandis juste à côté, laisse moi te parler de cet endroit."]
-        self.URL = "https://en.wikipedia.org/w/api.php"
+                      "J'ai grandis juste à côté, laisse moi te "
+                      "parler de cet endroit."]
+        self.url = "https://en.wikipedia.org/w/api.php"
 
     def wiki_request_title(self, lat: float, lng: float):
         """Fin a random place with coords of the place."""
@@ -62,8 +70,8 @@ class WikiApi:
             "gslimit": '10',
             "gradius": '1000'
         }
-        request = rq.get(self.URL, params=params)
-        #print(f"This is url: {request.url}")
+        request = rq.get(self.url, params=params)
+        print(f"This is url: {request.url}")
         response = request.json()
         print(f"wiki_response: {response}")
         result = response['query']['geosearch']
@@ -72,7 +80,8 @@ class WikiApi:
         print(f"page_title: {page_title}")
         return page_title
 
-    def extract_text(self, title: str):
+    @staticmethod
+    def extract_text(title: str):
         """This function find description of the random place found."""
 
         info = dict()
@@ -86,7 +95,7 @@ class WikiApi:
         """This function take every element we need for the answer."""
 
         grandpy_answer = []
-        random_intro = self.INTRO[rd.randint(0, len(self.INTRO)-1)]
+        random_intro = self.intro[rd.randint(0, len(self.intro)-1)]
         grandpy_answer.append(random_intro)
         grandpy_answer.append(summary)
         grandpy_answer.append(url)
@@ -96,6 +105,3 @@ class WikiApi:
 
 GoogleApi = GoogleApi()  # J'instancie ma classe
 WikiApi = WikiApi()
-# WikiApi.wiki_request_title(48.8975156, 2.3833993)
-WikiApi.extract_text("École nationale supérieure d'architecture de Paris-La Villette")
-# GoogleApi.google_request("OpenClassroom")

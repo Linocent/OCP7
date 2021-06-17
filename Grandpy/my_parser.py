@@ -1,17 +1,24 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Author: Timothée 2021-06-17
+This file is part of project [OCP7](https://github.com/Linocent/OCP7).
+"""
 import json
 import re
 import unidecode
 
 
 class MyParser:
+    """This class is about the parser."""
 
     def __init__(self):
         pass
 
     @staticmethod
     def my_parse(sentence: str):
-        """This function take the question and delete all words which are contain in ban_words.json
-        in order to have keywords."""
+        """This function take the question and delete all words which
+        are contain in ban_words.json in order to have keywords."""
 
         with open('grandpy/ban_words.json') as ban_word:
             data_dict = json.load(ban_word)
