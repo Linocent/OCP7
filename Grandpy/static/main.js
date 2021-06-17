@@ -15,16 +15,16 @@ fetch("http://127.0.0.1:5000/analyse?question="+text_Area.value)
 function publish(data) {
     const chat_elt = document.getElementById('chat_box');
     const answer = document.createElement("div");
-    /*let elt_to_publish = `<p class="question_right">${text_Area.value}</p>
+    let elt_to_publish = `<p class="question_right">${text_Area.value}</p>
     <p class="answer_left">Voici l'adresse: ${data.information.address}</p>
     <div id="map" class="answer_left"></div>
     <p class="answer_left">${data.gp_history[0]}<br>${data.gp_history[1]}.<br> Si tu veux en savoir plus,
-    va voir sur <a href="${data.gp_history[2]}">Wikipedia</a>.</p>`;*/
-    let elt_to_publish = `<p class="question_right">${text_Area.value}</p>
+    va voir sur <a href="${data.gp_history[2]}">Wikipedia</a>.</p>`;
+    /*let elt_to_publish = `<p class="question_right">${text_Area.value}</p>
     <p class="answer_left">Voici l'adresse: ${data.information}</p>
     <img id="map" src="../static/image/grandpiCarre.png" alt="Grandpi's logo">
     <p class="answer_left">${data.gp_history[0]}<br>${data.gp_history[1]}.<br> Si tu veux en savoir plus,
-    va voir sur <a href="${data.gp_history[2]}">Wikipedia</a>.</p>`;
+    va voir sur <a href="${data.gp_history[2]}">Wikipedia</a>.</p>`;*/
     answer.innerHTML = elt_to_publish;
     chat_elt.appendChild(answer);
     initMap(data)
