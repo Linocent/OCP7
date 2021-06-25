@@ -103,5 +103,5 @@ class WikiApi:
         return grandpy_answer
 
 
-GoogleApi = GoogleApi()  # J'instancie ma classe
+GoogleApi = GoogleApi()
 WikiApi = WikiApi()

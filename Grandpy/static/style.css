@@ -2,6 +2,9 @@
    font-family: 'Odibee Sans', cursive;
     font-family: 'Padauk', sans-serif;
 }
+
+
+
 body
 {
     background-color: #FBDA9C;
@@ -10,21 +13,25 @@ body
 #bloc_page
 {
     min-height: 100%;
+    height: auto;
     min-width: 100%;
+    width: auto;
 }
 
 /*Header*/
 
-#banniere /* gère le titre et le logo*/
+#banniere /*manage banner*/
 {
     max-height: 10%;
+    height: auto;
     min-width: 100%;
+    width: auto;
     border: 4px outset;
     display: flex;
     flex-direction: row;
 }
 
-h1 /* gère le titre de la banière*/
+h1 /*manage title of banner*/
 {
     flex: 6;
     margin-top: 50px;
@@ -32,7 +39,7 @@ h1 /* gère le titre de la banière*/
     font-family: Padauk;
 }
 
-#logo /*gère le logo*/
+#logo /*manage logo*/
 {
     width: 150px;
     height: 150px;
@@ -48,7 +55,9 @@ h1 /* gère le titre de la banière*/
     align-items: center;
     margin: auto;
     min-height: 100%;
+    height: auto;
     max-width: 50%;
+    width: auto;
     bottom: 0;
     border: 6px outset;
 }
@@ -94,6 +103,8 @@ h1 /* gère le titre de la banière*/
     flex-direction: row;
     align-items: flex-end;
     max-height: 50%;
+    max-width: 50%;
+    width: auto;
     height: auto;
     bottom: 0;
 }
@@ -101,7 +112,8 @@ h1 /* gère le titre de la banière*/
 #question
 {
     max-height: 5%;
-    margin: auto;
+    height: auto;
+    margin: 0 auto;
     bottom: 0;
 }
 #click
@@ -131,4 +143,29 @@ h1 /* gère le titre de la banière*/
     margin: auto;
     font-family: "Odibee Sans";
     width: 20%;
+}
+
+@media screen and (max-width: 1024px)
+{
+body
+{
+    background-color: darkgreen;
+
+}
+h1 /* manage title of banner*/
+{
+    flex: 6;
+    margin-top: 50px;
+    font-size: 50px;
+    font-family: Padauk;
+}
+
+#logo /*Manage logo*/
+{
+    width: 75px;
+    height: 75px;
+    margin: auto;
+    vertical-align: middle;
+}
+
 }
