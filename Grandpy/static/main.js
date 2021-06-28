@@ -7,6 +7,7 @@ fetch("/analyse?question="+text_Area.value)
     .then(function (response){
             if (response.status !== 200) {
                 console.log('Erreur: ' + response.status);
+                console.log();
             return;
             }
             response.json().then(publish)
