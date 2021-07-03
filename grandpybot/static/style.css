@@ -35,7 +35,7 @@ h1 /*manage title of banner*/
 {
     flex: 6;
     margin-top: 50px;
-    font-size: 100px; /*On peut mettre en pixel ceci*/
+    font-size: 100px;
     font-family: Padauk;
 }
 

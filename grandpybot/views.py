@@ -21,6 +21,7 @@ def index():
 @app.route('/analyse/', methods=['GET'])
 def analyse():
     """This where the user input will be analyse and the answer will send to front-end"""
+
     user_input = request.args["question"]
     keyword = MyParser.my_parse(user_input)
     information = GoogleApi.google_request(keyword)
