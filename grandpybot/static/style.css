@@ -3,8 +3,6 @@
     font-family: 'Padauk', sans-serif;
 }
 
-
-
 body
 {
     background-color: #FBDA9C;
@@ -168,5 +166,18 @@ h1 /* manage title of banner*/
     margin: auto;
     vertical-align: middle;
 }
-
+#corpse
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    min-height: 100%;
+    height: auto;
+    min-width: 100%;
+    width: auto;
+    bottom: 0;
+    border: 6px outset;
+}
 }
